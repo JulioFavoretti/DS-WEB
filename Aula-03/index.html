@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula-03</title>
+</head>
+<body>
+    <h1>Bem-vindo!</h1>
+    <p>Este é um exemplo simples de uma pagina HTML.</p>
+    <!--Lista não numeradas.-->
+    <h3>Listas não numeradas</h3>
+    <ul>
+        <!-- Lista em tópicos.-->
+        <li>Item 1</li>
+        <li>Item 2</li>
+        <!-- Lista dentro de lista.-->
+        <li>
+            <ul>
+                <li>Item 1.1</li>
+            </ul>
+        </li>
+        <!-- Subitem dentro da lista-->
+            <ul>
+                <li>Item 2.1</li>
+            </ul>
+        <!-- Subitem dentro de subitem-->
+        
+            <ul>
+                <ul>
+                    <li>Item 1.2</li>
+                </ul>
+            </ul>
+    </ul>
+    <br><br>
+    <!-- Listas enumeradas.-->
+    <h3>Listas enumeradas</h3>
+    <ol>
+        <li>Primeiro</li>
+        <li>Segundo</li>
+    <!-- Subitem lista enumerada. (1.1, 1.2...)-->
+        <ol>
+            <li>Definição</li>
+        </ol>
+    </ol>
+    <br><br>
+    <!-- Lista de definição-->
+    <h3>Listas de definição</h3>
+    <dl>
+        <dt>HTML</dt>
+        <dd>Hypertext Markup Language</dd>
+    </dl>
+    <br><br>
+    <!-- Elementos em nivel de bloco-->
+    <h3>Elementos em nível de bloco</h3>
+   
+    <p> elemento em nível de bloco sempre começa em uma nova linha e os navegadores adicionam automaticamente algum espaço (uma margem) antes e depois do elemento.</p>
+
+    <p>Um elemento de nível de bloco sempre ocupa toda a largura disponível (estende-se para a esquerda e para a direita tanto quanto possível).</p>
+
+    <p>Dois elementos de bloco comumente usados ​são: < p > e < div >.</p>
+
+    <p>O elemento < p > define um parágrafo em um documento HTML.</p>
+
+    <p>O elemento < div > define uma divisão ou seção em um documento HTML.</p>
+    <br>
+        <!-- Utilizando a tag <div> - Divisão, Seção ou Bloco-->
+    
+            <h3>Div - Divisão, Seção ou Bloco</h3>
+
+        <!-- Borda/Espaçamento interno-->
+    
+        <div style="border:solid 1px; padding-left:20px;">Olá eu sou uma Div!</div> <!--border:solid=borda (linha); padding= espaçamento entre essas linhas e o conteudo no meio; margin, muda a margem da linha, puxando tudo. -->
+        
+        <!--Deixando div com fundo de cor diferente, chamando atenção dos usuarios-->
+        <div style="background-color:black;color:white;padding:20px;">
+            <h2>London</h2>
+            <p>London is the capital city of England. It is the most populous city in the United Kingdom, with a metropolitan area of over 13 million inhabitants.</p>
+            <p>Standing on the River Thames, London has been a major settlement for two millennia, its history going back to its founding by the Romans, who named it Londinium.</p>
+        
+        <!-- Span - muda uma palavra especifica de outra cor(color) e em negrito(font-weight:bold)-->
+        </div>
+        <p>Minha mãe tem olhos <span style="color:blue;font-weight:bold;">azuis</span> e meu pai tem os olhos <span style="color: rgb(0,255,0);font-weight:bold;">verde escuro</span></p>
+
+        <span>Minha mãe tem olhos azuis</span>
+        <br><br><br>
+        
+        <h3>Input - Tipos de entrada de dados</h3>
+        <!--Label da um "titulo" para o input, como por exemplo: coloque o seu nome.-->
+        <label>Input do tipo Text:</label>
+        <!-- Input- msm coisa de pyhon, para o usuario escrever-->
+        <input type="text">
+        <br><br>
+        
+        <label>Input do tipo number:</label>
+        <!--Input para o usuario poder por só senha-->
+        <input type="number">
+
+        <!--Input de senha, para o usuario escrever-->
+        <br><br>
+        <label>Input do tipo passoword</label>
+        <input type="password">
+        <br><br>
+        
+        <!--Bolinha selecionavel para o usuario-->
+        <input type="radio" value="HTML">
+        <br>
+        <!--Quadradinho selecionavel para o usuario (Checking)-->
+        <input type="checkbox" value="CSS">
+        <br>
+        <!--Botão para o usuario clicar-->
+        <input type="button" value="Botão de ação">
+        <br>
+        <!--Botão de enviar, ou seja, após preencher um formulario ou algo assim, você clica para enviar.-->
+        <input type="submit" value="Botão de submit">
+        <br><br>
+
+        <h3>Form - Formulário</h3>
+<form action="" method="post">
+
+    <label>Nome de Usuario</label><br>
+    <input type="text" name="nome"><br>
+    
+    <label>Campo com Value preenchido</label><br>
+    <input type="text" name="nome" value="Campo com value"><br>
+    
+    <label>Campo com Placeholder</label><br>
+    <input type="text" name="nome" placeholder="Campo que possui placeholder"><br>
+    
+    <label>Campo com Required</label><br>
+    <input type="text" name="nome" required><br>
+
+    <label>Campo com maxlength</label><br>
+    <input type="text" name="nome" maxlength="3"><br>
+
+    <label>Campo com disabled</label><br>
+    <input type="text" name="nome" disabled><br>
+
+    <label>Campo com readonly</label><br>
+    <input type="text" name="nome" readonly><br>
+
+    <label>Campo com uma boa Validação</label><br>
+    <input type="text" name="Boavalidacao" maxlength="3" required placeholder="Campo boa validação"><br>
+    
+    <br>
+    <textarea name="mensagem"></textarea><br>
+    <select name="opcoes">
+        <option>Opção 1</option>
+        <option>Opção 2</option>
+        <option>Opção 3</option>
+        <option>Opção 4</option>
+    </select>
+
+    <input type="submit">
+
+</form>
+
+    <!-- Explicação dos comandos utilizados a cima.-->
+    <p> name: Nome do campo, utilizado no envio dos dados.</p>
+    <p>  value: Valor padrão do campo.</p>
+    <p>  placeholder: Texto exibido dentro do campo até que o usuário comece a digitar.</p>
+    <p>  required: Torna o campo obrigatório.´</p>
+    <p>  maxlength: Limita o número de caracteres inseridos.</p>
+    <p>  disabled: Desabilita o campo, impedindo interação.</p>
+    <p>  readonly: Torna o campo apenas leitura.</p>
+
+
+
+
+</body>
+</html>
