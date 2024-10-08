@@ -1,0 +1,52 @@
+
+p{
+      font-family: "Playwrite DE Grund", cursive;
+      font-optical-sizing: auto;
+      font-weight: weight;
+      font-style: normal;
+}
+  
+.uppercase{
+    text-transform: uppercase;
+}
+.lowercase{
+    text-transform: lowercase;
+}
+.capitalize{
+    text-transform: capitalize;
+}
+.indent{
+    text-indent: 20px;
+}
+.shadow{
+    text-shadow: 1px 1px #FF0000;
+}
+.shadow-blur{
+    text-shadow: 1px 1px 5px #0dff00;
+}
+
+.span1{
+    text-shadow: 1px 1px 5px #621d93;
+
+}
+
+.span2{
+    text-shadow: 1px 1px 5px #ff4000;
+
+}
+
+.overline{
+    text-decoration: overline;
+}
+.line-through{
+    text-decoration: line-through;
+}
+.underline{
+    text-decoration: underline;
+}
+.overline-underline{
+    text-decoration: overline underline;
+}
+.overline-underline-e-line-through{
+    text-decoration: overline underline line-through;
+}
