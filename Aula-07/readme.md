@@ -3,9 +3,11 @@
 - 📝 Anotação:
 - 🔗https://www.iconfinder.com/ 
 
-- Para pegar ícon e salvar como "SVG"
+- 😁Para pegar ícon e salvar como "SVG"
 
 
 - 🔗https://www.pexels.com/
 
-- Para baixar vídeos e fotos gratuitamente. 
+- 😯Para baixar vídeos e fotos gratuitamente. 
+
+
