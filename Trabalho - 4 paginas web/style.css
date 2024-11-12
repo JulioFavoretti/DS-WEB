@@ -1,0 +1,56 @@
+
+
+.pagina1{
+    color: rgb(169, 212, 235);
+    border: 3px solid  rgb(101, 217, 249);   
+    width: 1000px;
+    padding: 30px;
+    margin: 200px;
+    background-color: rgb(183, 0, 180);
+}
+.pagina2{
+    color: rgb(239, 210, 255);
+    border: 3px solid  rgb(96, 255, 130);   
+    width: 1000px;
+    padding: 30px;
+    margin: 200px;
+    background-color: rgb(190, 85, 255);
+}
+.pagina3{
+    
+    color: rgb(0, 0, 0);
+    border: 3px solid  rgb(26, 0, 62);   
+    width: 1000px;
+    padding: 30px;
+    margin: 200px;
+    background-color: rgb(255, 81, 174);
+}
+.Video{
+    border: solid rgb(255, 45, 45) 2px;
+    width: 560.5px;
+    height: 315px;
+    
+}
+.manual{
+    background-color: bisque;
+    border: solid 3px black;
+    width: 1000px;
+    margin: 200px;
+    padding: 30px;
+
+}
+.img-trans{
+    height: 500px;
+    width: 330px;
+
+}
+.img-rambo{
+    height: 500px;
+    width: 330px;
+
+}
+.img-godzilla{
+    height: 500px;
+    width: 330px;
+
+}

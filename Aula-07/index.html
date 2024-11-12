@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        img{
+            width: 100px;
+            height: 100px;
+        }
+        body{
+            background-image: url("hollywood.jpg");
+            background-size: contain ;
+            background-repeat: repeat-x;
+            background-attachment: fixed;
+        }
+        .container{
+            height: 2000px;
+            width: 800px ;
+            background-color: white;
+            border: 1px solid white;
+
+            background-image: url("ovelha.jpg") ;
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: top center;
+            margin: 0 auto;
+        }
+        .menu-top{
+            width: 100%;
+            padding: 20px;
+            padding-left: 200px;
+            position: sticky ;
+            background-color: white;
+            top: 0;
+            display: flex;
+        }
+        .titulo-home{
+            margin-top: 6px;
+            margin-left: 4px;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="menu-top">
+        <img src="icon-insta.svg" title="Logo do instagram!" > <br>
+        <h1 class="titulo-home">Página Home</h1>
+    </div>
+    <img src="icon-insta.svg">
+
+    <div class="container">
+        <img src="hollywood.jpg" title="HOLLYWOD, coisa linda" loading="lazy" >
+    </div>    
+
+</body>
+</html>
