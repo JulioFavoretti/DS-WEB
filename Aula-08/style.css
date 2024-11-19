@@ -1,0 +1,22 @@
+div{
+background-color: black;
+width: 600px; 
+border: 1px solid orange;
+text-align: center;
+}
+
+h1{
+    color:white;
+}
+
+nav{
+    width: 200px;
+    display: inline-block;
+    background-color: grey;  
+}
+
+a{
+display: block;
+text-decoration:  dotted;
+}
+
