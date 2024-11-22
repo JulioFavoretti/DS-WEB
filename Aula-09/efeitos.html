@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exemplo de Animação</title>
+    <style>
+    /* Define os passos da animação */
+    @keyframes moverEfeito {
+        0% {
+            transform: translateY(0);
+            background-color: rgb(226, 68, 68);
+            color: #e03bb1;
+        }
+        25% {
+            transform: translateY(300px);
+            background-color: rgb(219, 219, 86);
+            color: #19ca4e;    
+        }
+        50% {
+            transform: translateY(0);
+            background-color: rgb(255, 0, 0);
+            color: #6b6369;
+        }
+        75% {
+            transform: translateY(-180px);
+            background-color: rgb(74, 173, 254);
+            color: #c189f8;
+        }
+        100% {
+            transform: translateY(0);
+            background-color: rgb(252, 249, 249);
+            color: #000000;
+        }
+    }
+    /* Aplica a animação ao elemento */
+    div{
+        display: inline-block;
+    }
+
+    .animado {
+        
+        width: 150px;
+        height: 100px;
+        animation: moverEfeito 3s ease-in-out infinite;
+        margin-bottom: 20px; /* Espaço entre os elementos */
+    }
+    .scale {
+        margin-left: 20px;
+        width: 100px;
+        height: 100px;
+        background-color: #3498db;
+        transition: transform 0.5s;
+    }
+    .scale:hover{
+        transform: scale(1.5);
+    }
+
+    .gradiante{
+        width: 200px;
+        height: 100px;
+        background: linear-gradient(90deg, #3498db, lightgreen, chocolate);
+    }
+    .rotate{
+        margin-left: 30px;
+        width: 100px;
+        height: 100px;
+        background-color: #d278dd;
+        transition: transform 0.5s;
+    }
+    .rotate:hover{
+        transform: rotate(80deg); 
+        margin-left: 0; 
+    }
+
+    .transition{
+        margin-left: 50px;
+        margin-right: 50px;
+        width: 100px;
+        height: 100px;
+        background-color: #6b6369;
+        transition: background-color 3s ease, transform 2.8s ease;
+    }
+    .transition:hover {
+            background-color: #aaecc5;
+            transform: scale(2);
+    }
+    .translate{
+        width: 100px;
+        height: 100px;
+        background-color: #54b7be;
+        transition: transform 0.5s;
+    }
+    .translate:hover {
+        transform: translate(0px, 300px);
+    }    
+    
+    .border-radius{
+        background-color: #7df1a0;
+    }
+    .border-radius:hover{
+        width: auto;
+        height: auto;
+        transition: border-radius 3s;
+        background-color: #3498db;
+        border-radius: 100%;
+    }
+    body{
+        margin-top: 200px;
+        width: 93%;
+        display: flex;
+        justify-content: space-between;
+        margin-left: 40px;
+        background: linear-gradient(90deg, #9ceab4, #8a73f0, #e03bb1);
+
+    }
+    
+
+    </style>
+</head>
+<body>
+
+    <br><br><br>
+    <div class="scale">
+        <h3>Utilizando Scale</h3>
+    </div>
+
+    <div class="gradiante">
+        <h3>Utilizando Gradiante</h3>
+    </div>
+
+    <div class="rotate">
+        <h3>Utilizando Rotate</h3>
+    </div>
+
+    <div class="transition">
+        <h3>Utilizando Transition</h3>
+    </div>
+    
+    <div class="animado">
+        <h3>Utilizando Animations</h3>
+    </div>
+
+    <div class="translate">
+        <h3>Utilizando Translate</h3>
+    </div>
+    
+    <div class="border-radius">
+        <h3>Utilizando Border-radius</h3>
+    </div>
+</body>
+</html>
