@@ -16,6 +16,7 @@
 
 #### 👨🏻‍💻 Areá dos códigos.
 - 😷 Background - Diversos tipos de fundo, aprendendo a manupular ele.
-- 🐳 video - Aprendemos a colocar vídeos e desenvolvemos uma página com o mesmo (Pasta: Pagina WEB - Video).
-- 😎 tags de img e video: title, alt, img, video, controls, autoplay, entre outros.'
+- 🐳 Video - Aprendemos a colocar vídeos e desenvolvemos uma página com o mesmo (Pasta: Pagina WEB - Video).
+- 😎 Tags de img e video: title, alt, img, video, controls, autoplay, entre outros.
+- 😊 Criamos um menu com as funções aprendidas: Fundo, imagem e divs.
 ### Essa foi a nossa aula de hoje. 
