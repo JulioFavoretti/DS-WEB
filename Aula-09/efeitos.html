@@ -114,13 +114,25 @@
         background: linear-gradient(90deg, #9ceab4, #8a73f0, #e03bb1);
 
     }
-    
+    .box {
+        width: 100px;
+        height: 100px;
+        background-color: #3498db;
+        opacity: 1;
+        transition: opacity 0.5s;
+    }
+    .box:hover {
+        opacity: 0.5;
+    }
 
     </style>
 </head>
 <body>
 
-    <br><br><br>
+    <div class="box">
+        <h3>Opacity</h3>
+    </div>
+
     <div class="scale">
         <h3>Utilizando Scale</h3>
     </div>
