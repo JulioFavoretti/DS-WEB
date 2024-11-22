@@ -1,3 +1,7 @@
+# Aula - 07 😜.
+
+## O que aprendemos?
+
 - 🎮 Aula sobre Imagens e manipulação das mesmas
 
 - 📝 Anotação:
@@ -10,4 +14,4 @@
 
 - 😯Para baixar vídeos e fotos gratuitamente. 
 
-
+### Essa foi a nossa aula de hoje.
