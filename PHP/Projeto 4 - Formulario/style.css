@@ -1,0 +1,46 @@
+form{
+    width: 550px;
+    margin: auto;
+    background: #bfacb7 ;
+    padding: 40px;
+    border-radius: 10px;
+}
+label, input{
+    width: 85%;
+    padding: 8px;
+    margin-bottom: 10px;
+    display: block;
+    margin-right: 0px;
+    margin-left: 25px;
+    
+
+}
+label{
+    padding: 0;
+    margin: 0;
+    font-size: 15px;
+}
+.lim, .cadas{
+    margin-left: 0;
+    margin-right: 0;
+    width: 100%;
+    border: solid 2px #ffb300;
+    background-color: #fff;
+    color: #ffb300;
+    font-weight: bold;
+    cursor: pointer;
+    padding: 12px;
+    font-size: 15px;
+    letter-spacing: 0.04em;
+    
+}
+#enviar:hover{
+    background-color: #26c86c;
+    color: #fff;
+    transition:all Linear 0.3s;
+}
+#limp:hover{
+    background-color: #ff0000;
+    color: #fff;
+    transition:all Linear 0.3s;
+}

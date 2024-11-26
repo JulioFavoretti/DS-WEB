@@ -85,13 +85,13 @@
         }
 
         .logo {
-            width: 40%; /* Ajusta a largura da logo em relação à tela */
-            max-width: 700px; /* Limita a largura máxima da logo */
+            width: 15%; /* Tamanho menor da logo */
+            max-width: 200px; /* Limita a largura máxima da logo */
             height: auto;
             position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%); /* Centraliza a logo */
+            left: 20px; /* Aproxima a logo da borda esquerda */
+            top: 50%; /* Posiciona na metade da altura */
+            transform: translateY(-50%); /* Centraliza verticalmente em relação à metade da altura */
             z-index: 2;
         }
 
@@ -105,6 +105,7 @@
 
         .img-item {
             text-align: center;
+            margin: 0;
         }
 
         .img-item img {
@@ -146,6 +147,9 @@
             margin-left: -300px;
             font-size: 10px;
         }
+        .pm{
+            margin-top: 10px;
+        }
     </style>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
 </head>
@@ -164,8 +168,8 @@
 
     <!-- Imagem principal -->
     <div class="main-image-container">
-        <img src="teste.jpg" alt="Imagem Principal" class="main-image">
-        <img src="logocsr.png" alt="Logo CSR" class="logo">
+        <img src="imagem_principal.png" alt="Imagem Principal" class="main-image">
+        <img src="Logo-CSR-semfundo.png" alt="Logo CSR" class="logo">
     </div>
 
     <!-- Conteúdo adicional -->
@@ -175,16 +179,16 @@
             <h1 class="servicos">SERVIÇOS</h1>
         </div>
         <div class="img-item">
-            <img src="construção.jpg" alt="Construção">
-            <p>Construção</p>
+            <img src="construção.png" alt="Construção">
+            <p class="pm">Construção</p>
         </div>
         <div class="img-item">
-            <img src="projeto-engenharia.jpg" alt="Projetos">
-            <p>Projetos</p>
+            <img src="projeto.png" alt="Projetos">
+            <p class="pm">Projetos</p>
         </div>
         <div class="img-item">
-            <img src="materiais.jpg" alt="Materiais">
-            <p>Materiais</p>
+            <img src="material.png" alt="Materiais">
+            <p class="pm">Materiais</p>
         </div>
     </div>
 </body>
