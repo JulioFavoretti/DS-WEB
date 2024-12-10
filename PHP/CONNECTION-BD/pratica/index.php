@@ -100,7 +100,7 @@
 
                 if (mysqli_num_rows($resultado) > 0) {
                     while ($linha = mysqli_fetch_assoc($resultado)) {
-                        echo "<div class='block'>ID: " . $linha['id'] . " - Nome: " . $linha['nome'] . " - Valor: " . $linha['valor'] . " - Estoque: " . $linha['estoque'] . "</div>";
+                        echo "<div class='block'>ID: " . $linha['id'] . " - Nome: " . $linha['nome'] . " - Valor: R$" . $linha['valor'] . " - Estoque: " . $linha['estoque'] . " unidades" . "</div>";
                     }
                 } else {
                     echo "<p>Nenhum produto encontrado.</p>";

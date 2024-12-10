@@ -80,18 +80,18 @@
         }
 
         .main-image {
-            width: 100%; /* Ajusta a imagem para ocupar toda a largura da tela */
-            height: auto; /* Mantém a proporção */
+            width: 100%;
+            height: auto;
         }
 
         .logo {
-            width: 15%; /* Tamanho menor da logo */
-            max-width: 200px; /* Limita a largura máxima da logo */
+            width: 15%;
+            max-width: 200px;
             height: auto;
             position: absolute;
-            left: 20px; /* Aproxima a logo da borda esquerda */
-            top: 50%; /* Posiciona na metade da altura */
-            transform: translateY(-50%); /* Centraliza verticalmente em relação à metade da altura */
+            left: 20px;
+            top: 50%;
+            transform: translateY(-50%);
             z-index: 2;
         }
 
@@ -105,7 +105,6 @@
 
         .img-item {
             text-align: center;
-            margin: 0;
         }
 
         .img-item img {
@@ -142,13 +141,60 @@
             margin-left: 30px;
         }
 
-        .texto-traga {
-            margin-top: 300px;
-            margin-left: -300px;
-            font-size: 10px;
+        /* Seção de contato */
+        .contact-section {
+            background-color: black;
+            color: white;
+            padding: 50px 20px;
         }
-        .pm{
-            margin-top: 10px;
+
+        .contact-container {
+            display: flex;
+            justify-content: space-between;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .contact-container div {
+            text-align: left;
+        }
+
+        .contact-container h2 {
+            color: orangered;
+        }
+
+        .contact-container input, 
+        .contact-container textarea, 
+        .contact-container button {
+            width: 300px;
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            margin-bottom: 15px;
+        }
+
+        .contact-container button {
+            background-color: orangered;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        .contact-container button:hover {
+            background-color: #e66000;
+        }
+
+        /* Rodapé */
+        .footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .footer img {
+            width: 150xpx;
+            right: 50px;
         }
     </style>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
@@ -180,16 +226,44 @@
         </div>
         <div class="img-item">
             <img src="construção.png" alt="Construção">
-            <p class="pm">Construção</p>
+            <p>Construção</p>
         </div>
         <div class="img-item">
             <img src="projeto.png" alt="Projetos">
-            <p class="pm">Projetos</p>
+            <p>Projetos</p>
         </div>
         <div class="img-item">
             <img src="material.png" alt="Materiais">
-            <p class="pm">Materiais</p>
+            <p>Materiais</p>
         </div>
+    </div>
+
+    <!-- Fale Conosco -->
+    <div class="contact-section">
+        <div class="contact-container">
+            <div>
+                <h2>FALE CONOSCO</h2>
+                <p>(11) 98679-2357</p>
+                <p>csr.engetec@gmail.com</p>
+            </div>
+            <div>
+                <h2>Traga seu PROJETO!</h2>
+                <form action="#" method="POST">
+                    <label for="nome">Nome:</label><br>
+                    <input type="text" id="nome" name="nome"><br>
+                    <label for="segmento">Segmento:</label><br>
+                    <input type="text" id="segmento" name="segmento"><br>
+                    <label for="projeto">Sobre seu projeto:</label><br>
+                    <textarea id="projeto" name="projeto" rows="4"></textarea><br>
+                    <button type="submit">Solicitar contato</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Rodapé -->
+    <div class="footer">
+        <img src="Logo-CSR-semfundo.png" alt="Logo CSR">
     </div>
 </body>
 </html>
