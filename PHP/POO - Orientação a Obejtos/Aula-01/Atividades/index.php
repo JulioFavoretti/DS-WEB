@@ -32,6 +32,7 @@ $LapisCor = new Lapis();
 $LapisCor->marca = "FaberCastell";
 $LapisCor->cor = "AzulBebe";
 $LapisCor->escreve = "poema";
+echo $LapisCor->Escrever;
 
 ?>
 

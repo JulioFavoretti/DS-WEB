@@ -29,10 +29,11 @@ class CarregadorUSB {
 //Instalando meus objetos
 
 $CarregadorMotorola = new CarregadorUSB(); 
-$CarregadorMotorola->tamanho = "2 Metros";
+$CarregadorMotorola->tamanho = 2; //metros
 $CarregadorMotorola->cor = "Preto";
 $CarregadorMotorola->marca = "Motorola";
-$CarregadorMotorola->peso = "500 G";
-$CarregadorMotorola->preco = " R$200,00";
-$CarregadorMotorola->potencia = " 60 W";
+$CarregadorMotorola->peso = 500; // gramas
+$CarregadorMotorola->preco = 200; //reais
+$CarregadorMotorola->potencia = 60; //Wolts
+echo $CarregadorMotorola->exibirMarca;
 ?>

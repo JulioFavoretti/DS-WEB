@@ -10,7 +10,7 @@ class Escorregador {
     public $preco;
     //Metodo:
     public function exibirPeso(){
-        return "O peso do escorregador é: " .$this->peso;     
+        return "O peso do escorregador é: " .$this->peso ." kilos";     
     }
     public function Subida(){
        
@@ -27,9 +27,10 @@ class Escorregador {
 //Instalando meus objetos
 
 $EscorregaPiscina = new Escorregador(); 
-$EscorregaPiscina->tamanho = "3 Metros de altura";
+$EscorregaPiscina->tamanho = 12; //Metros
 $EscorregaPiscina->cor = "Azul, Amarelo, Vermelho e Laranja";
 $EscorregaPiscina->material = "Plastico, madeira, ferro.";
-$EscorregaPiscina->peso = "200 Kg";
-$EscorregaPiscina->preco = " R$1420,00";
+$EscorregaPiscina->peso = 200; //Kilos
+$EscorregaPiscina->preco = 1420; //Reais
+echo $EscorregaPiscina->exibirPeso;
 ?>

@@ -31,6 +31,6 @@ $Moletom = new Roupa();
 $Moletom->tamanho = "GG";
 $Moletom->cor = "Branco";
 $Moletom->material = "Algodão";
-$Moletom->peças = "120";
-$Moletom->preco = " R$220,00";
+$Moletom->peças = 120; //Unidades
+$Moletom->preco = 220; //Reais
 ?>

@@ -34,5 +34,6 @@ $TorneiraGourmet = new Torneira();
 $TorneiraGourmet->marca = "Deca";
 $TorneiraGourmet->cor = "Prata e Preto";
 $TorneiraGourmet->material = "aço inoxidável";
+echo $TorneiraGourmet->exibirMarca;
 
 ?>
