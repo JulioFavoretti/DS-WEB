@@ -33,4 +33,5 @@ $Moletom->cor = "Branco";
 $Moletom->material = "Algodão";
 $Moletom->peças = 120; //Unidades
 $Moletom->preco = 220; //Reais
+echo $Moletom->exibirTamanho();
 ?>

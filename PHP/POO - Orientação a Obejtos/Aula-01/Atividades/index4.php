@@ -32,5 +32,5 @@ $EscorregaPiscina->cor = "Azul, Amarelo, Vermelho e Laranja";
 $EscorregaPiscina->material = "Plastico, madeira, ferro.";
 $EscorregaPiscina->peso = 200; //Kilos
 $EscorregaPiscina->preco = 1420; //Reais
-echo $EscorregaPiscina->exibirPeso;
+echo $EscorregaPiscina->exibirPeso();
 ?>

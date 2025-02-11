@@ -35,5 +35,5 @@ $CarregadorMotorola->marca = "Motorola";
 $CarregadorMotorola->peso = 500; // gramas
 $CarregadorMotorola->preco = 200; //reais
 $CarregadorMotorola->potencia = 60; //Wolts
-echo $CarregadorMotorola->exibirMarca;
+echo $CarregadorMotorola->exibirMarca();
 ?>
