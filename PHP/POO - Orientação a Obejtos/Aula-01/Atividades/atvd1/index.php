@@ -12,7 +12,7 @@ class Lapis {
 
     //Metodo:
     public function Escrever(){
-        return "Escreveu um: " .$this->escreve;
+        return "Você screveu um: " .$this->escreve;
     }
     public function desenhar(){
 
@@ -31,7 +31,7 @@ class Lapis {
 $LapisCor = new Lapis(); 
 $LapisCor->marca = "FaberCastell";
 $LapisCor->cor = "AzulBebe";
-$LapisCor->escreve = "poema";
+$LapisCor->escreve = "Poema";
 echo $LapisCor->Escrever();
 
 ?>
