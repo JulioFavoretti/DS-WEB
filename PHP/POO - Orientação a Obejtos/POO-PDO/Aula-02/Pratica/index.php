@@ -8,7 +8,7 @@
 <body>
     <div class="menu">
         <ul>
-            <li><a href="index.php" class="meumenu" title="Home">Home</a></li>
+            <li><a href="index.php" class="meumenu meumenu-active" title="Home">Home</a></li>
             <li><a href="cliente.php" class="meumenu" title="Clientes">Clientes </a></li>
             <li><a href="#" class="meumenu" title="Produtos">Produtos </a></li>
             <li><a href="#" class="meumenu" title="Vendas">Vendas </a></li>
@@ -28,4 +28,5 @@
     </div>
 </body>
 <script src="script.js"></script>
+<script src="https://kit.fontawesome.com/56c1ac89b8.js" crossorigin="anonymous"></script>
 </html>
