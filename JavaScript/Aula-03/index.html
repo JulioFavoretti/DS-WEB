@@ -1,13 +1,16 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Gerador de Cartões</title>
 </head>
 <body>
-    
-    
+    <h2>Gerador de Cartões</h2>
+    <input type="text" id="nome" placeholder="Digite o nome" required>
+    <input type="text" id="descricao" placeholder="Digite a descrição" required>
+    <button onclick="criarCartao()">Criar Cartão</button>
+    <div id="cartoes-container"></div>
 </body>
 <script src="script.js"></script>
 </html>
