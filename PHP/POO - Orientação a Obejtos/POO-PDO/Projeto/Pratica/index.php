@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Business System - Home</title>
+    <link rel="shortcut icon" href="./assets/img/icon.svg" type="imagex/png">
+    <link rel="stylesheet" href="./assets/style/style.css">
 <body>
     <div class="menu">
         <ul>
@@ -27,6 +28,6 @@
         ?>
     </div>
 </body>
-<script src="script.js"></script>
+<script src="./assets/js/script.js"></script>
 <script src="https://kit.fontawesome.com/56c1ac89b8.js" crossorigin="anonymous"></script>
 </html>

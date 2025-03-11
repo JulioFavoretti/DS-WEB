@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Business System - Cliente</title>
+    <link rel="shortcut icon" href="./assets/img/icon.svg" type="imagex/png">
+    <link rel="stylesheet" href="./assets/style/style.css">
 <body>
     <div class="menu">
         <ul>
@@ -21,13 +22,16 @@
             <form action="insertion.php" method="POST" name="formulario" onsubmit="return validarDadosCliente()">
                 <label for="nome">Nome: </label>
                 <input type="text" id="nome" name="nome" >
-                <br>
+                <p class="erro-input" id="erro-nome"></p>
+              
                 <label for="email">E-mail: </label>
                 <input type="text" id="email" name="email">
-                <br>
+                <p class="erro-input" id="erro-email"></p>
+              
                 <label for="observacao">Observação do Cliente:</label>
                 <textarea name="observacao" id="observacao" cols="30" rows="4"></textarea>
-                <br>
+                <p class="erro-input" id="erro-observacao"></p>
+       
                 <input type="submit">
             </form>
         </div>
@@ -57,7 +61,7 @@
                     <td>$nomeCliente</td>
                     <td>$emailCliente</td>
                     <td>$observacaoCliente</td>
-                    <td><a class='link-alteracao' a href='update.php?id=$idCliente'><i class='fa-solid fa-pencil'></i></a></td>
+                    <td><a class='link-alteracao' a href='clienteAlteracao.php?id=$idCliente'><i class='fa-solid fa-pencil'></i></a></td>
                     <td><a class='link-exclusao' href='delete.php?id=$idCliente'><i class='fa-solid fa-trash'></i></a></td>
                 </tr>
             ";
@@ -66,6 +70,6 @@
     </table>
     </div>
 </body>
-<script src="script.js"></script>
+<script src="./assets/js/script.js"></script>
 <script src="https://kit.fontawesome.com/56c1ac89b8.js" crossorigin="anonymous"></script>
 </html>

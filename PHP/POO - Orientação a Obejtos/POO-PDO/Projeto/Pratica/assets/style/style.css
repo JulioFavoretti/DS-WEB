@@ -72,6 +72,10 @@ input[type=submit] {
 input:hover[type=submit] {
     background-color: #218838;
 }
+.erro-input{
+    color: red;
+    font-size: 15px;
+}
 
 /*Definindo o style da tabela de dados do cliente*/
 #clientes {
