@@ -11,7 +11,7 @@
     $observacao = $_POST["observacao"];
     $id = $_GET['id'];
 
-    include "conexao.php";
+    include "../conexao.php";
 
     $statement = $db->prepare("UPDATE clientes SET nome = :nome, email = :email, observacao = :observacao WHERE id = :id");
     $statement->bindParam(':nome', $nome );

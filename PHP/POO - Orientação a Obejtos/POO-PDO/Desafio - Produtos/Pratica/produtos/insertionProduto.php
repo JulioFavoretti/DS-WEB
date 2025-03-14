@@ -1,25 +1,26 @@
+
 <?php
     if($_SERVER['REQUEST_METHOD'] != 'POST'){
         echo"<script>alert('Está faltando o método POST')
             window.location.href = '.\produto.php';
         </script>";
     }
-
-    $id = $_GET["id"];
+    
     $codigo = $_POST["codigo"];
     $nome = $_POST["nome"];
     $estoque = $_POST["estoque"];
     $preco = $_POST["preco"];
 
     include '..\conexao.php';
-
-    $statement = $db->prepare("UPDATE produto SET codigo = :codigo, nome = :nome, estoque = :estoque, preco = :preco WHERE id = :id");
-    $statement->bindParam(':id', $id);
-    $statement->bindParam(':codigo', $codigo );
-    $statement->bindParam(':nome', $nome );
+    
+    echo "<h2>Inserindo dados</h2>";
+    
+    $statement = $db->prepare("INSERT INTO produto (codigo, nome, estoque, preco) VALUES (:codigo, :nome, :estoque, :preco)");
+    $statement->bindParam(':codigo', $codigo);
+    $statement->bindParam(':nome', $nome);
     $statement->bindParam(':estoque', $estoque);
-    $statement->bindParam(':preco', $preco );  
+    $statement->bindParam(':preco', $preco);
     $statement->execute();
 
-    header("Location: produto.php");
+    header("Location: .\produto.php");
 ?>

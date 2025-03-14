@@ -5,13 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Business System - Cliente</title>
     <link rel="shortcut icon" href="./assets/img/icon.svg" type="imagex/png">
-    <link rel="stylesheet" href="./assets/style/style.css">
+    <link rel="stylesheet" href="../assets/style/style.css">
 <body>
     <div class="menu">
         <ul>
-            <li><a href="index.php" class="meumenu" title="Home">Home</a></li>
-            <li><a href="cliente.php" class="meumenu meumenu-active" title="Clientes">Clientes </a></li>
-            <li><a href="#" class="meumenu" title="Produtos">Produtos </a></li>
+            <li><a href="..\index.php" class="meumenu" title="Home">Home</a></li>
+            <li><a href=".\cliente.php" class="meumenu meumenu-active" title="Clientes">Clientes </a></li>
+            <li><a href="..\produtos\produto.php" class="meumenu" title="Produtos">Produtos </a></li>
             <li><a href="#" class="meumenu" title="Vendas">Vendas </a></li>
         </ul>
     </div>
@@ -19,9 +19,9 @@
         <hr>
             <?php
                 if($_SERVER['REQUEST_METHOD'] != 'GET' || !isset($_GET['id'])){
-                    header("Location: cliente.php");
+                    header("Location: .\cliente.php");
                 }
-                include 'conexao.php';
+                include '..\conexao.php';
                 $id = $_GET['id'];
                 $stmt = $db->prepare("SELECT * FROM clientes WHERE id = :id");
                 $stmt->bindParam(':id',$id);

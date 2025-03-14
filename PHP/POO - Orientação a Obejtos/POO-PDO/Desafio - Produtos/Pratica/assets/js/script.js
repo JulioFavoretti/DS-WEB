@@ -10,6 +10,7 @@ function validarDadosCliente(){
             return false;   
         }
 
+
         //Verificação Email.
         if(formulario.email.value == "" || 
             formulario.email.value.indexOf('@')==-1 ||

@@ -1,6 +1,6 @@
 <?php
     $id = $_GET['id'];
-    include "conexao.php";
+    include "../conexao.php";
     
     $stmt = $db->prepare("DELETE FROM produto WHERE id = :id");
     $stmt->bindParam(':id', $id);

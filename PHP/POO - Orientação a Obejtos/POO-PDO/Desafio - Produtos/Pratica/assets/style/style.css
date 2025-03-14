@@ -33,7 +33,7 @@ li .meumenu-active {
 /*Código CSS da Página*/
 .container {
     margin: 0 auto;
-    width: 500px;
+    width: 600px;
 }
 .formulario {
     display: flex;

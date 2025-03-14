@@ -25,7 +25,11 @@
 
             $dados = $db->query("SELECT * FROM clientes");
             echo "Quantidade de clientes cadastrados: " . $dados->rowCount();
+            echo "<br>";
+            $dados = $db->query("SELECT * FROM produto");
+            echo "Quantidade de produtos cadastrados: " . $dados->rowCount();
         ?>
+        
     </div>
 </body>
 <script src="./assets/js/script.js"></script>

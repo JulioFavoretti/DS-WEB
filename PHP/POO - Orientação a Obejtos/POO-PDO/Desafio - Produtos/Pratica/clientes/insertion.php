@@ -10,7 +10,7 @@
     $email = $_POST["email"];
     $observacao = $_POST["observacao"];
 
-    include "conexao.php";
+    include "../conexao.php";
     
     echo "<h2>Inserindo dados</h2>";
     

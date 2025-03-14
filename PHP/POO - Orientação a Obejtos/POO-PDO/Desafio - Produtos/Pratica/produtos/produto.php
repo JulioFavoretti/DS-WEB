@@ -19,7 +19,7 @@
     <div class="container">
         <hr>
         <div class="formulario">
-            <form action="insertion.php" method="POST" name="formulario" onsubmit="return validarDadosProduto()">
+            <form action="insertionProduto.php" method="POST" name="formulario" onsubmit="return validarDadosProduto()">
                 <label for="codigo">Codigo do produto: </label>
                 <input type="number" id="codigo" name="codigo" >
                 <p class="erro-input" id="erro-codigo"></p>
@@ -39,7 +39,7 @@
                 <input type="submit">
             </form>
         </div>
-
+    <br>
     <table id="produtos">
         <tr>
             <th>Codigo</th>
@@ -68,9 +68,10 @@
                 <tr>
                     <td>$CodigoProduto</td>
                     <td>$nomeProduto</td>
-                    <td>$observacaoCliente</td>
-                    <td><a class='link-alteracao' a href='clienteAlteracao.php?id=$idCliente'><i class='fa-solid fa-pencil'></i></a></td>
-                    <td><a class='link-exclusao' href='delete.php?id=$idCliente'><i class='fa-solid fa-trash'></i></a></td>
+                    <td>$estoqueProduto</td>
+                    <td>$PrecoProduto</td>
+                    <td><a class='link-alteracao' a href='produtoAlteracao.php?id=$idProduto'><i class='fa-solid fa-pencil'></i></a></td>
+                    <td><a class='link-delete' href='produtoDelete.php?id=$idProduto'><i class='fa-solid fa-trash'></i></a></td>
                 </tr>
             ";
         }
@@ -78,6 +79,6 @@
     </table>
     </div>
 </body>
-<script src="./assets/js/script.js"></script>
+<script src="../assets/js/scriptProduto.js"></script>
 <script src="https://kit.fontawesome.com/56c1ac89b8.js" crossorigin="anonymous"></script>
 </html>
