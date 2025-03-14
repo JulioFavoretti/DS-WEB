@@ -1,3 +1,6 @@
+<?php 
+    session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -19,18 +22,18 @@
     <div class="container">
         <hr>
         <div class="formulario">
-            <form action="insertion.php" method="POST" name="formulario" onsubmit="return validarDadosCliente()">
+            <form action="insertion.php" method="POST" name="formulario">
                 <label for="nome">Nome: </label>
-                <input type="text" id="nome" name="nome" >
-                <p class="erro-input" id="erro-nome"></p>
+                <input type="text" id="nome" name="nome" value = "<?=isset ($_SESSIO['valorNome']) ? $_SESSIO['valorNome'] : "";?>">
+                <p class="erro-input" id="erro-nome"><?=isset ($_SESSION['erroNome']) ? $_SESSION['erroNome'] : "";?></p>
               
                 <label for="email">E-mail: </label>
-                <input type="text" id="email" name="email">
-                <p class="erro-input" id="erro-email"></p>
+                <input type="text" id="email" name="email" value= "<?=isset ($_SESSIO['valorNome']) ? $_SESSIO['valorNome'] : "";?>">
+                <p class="erro-input" id="erro-email"><?=isset ($_SESSION['erroEmail']) ? $_SESSION['erroEmail'] : "";?></p>
               
                 <label for="observacao">Observação do Cliente:</label>
-                <textarea name="observacao" id="observacao" cols="30" rows="4"></textarea>
-                <p class="erro-input" id="erro-observacao"></p>
+                <textarea name="observacao" id="observacao" cols="30" rows="4"><?=isset ($_SESSIO['valorObservacao']) ? $_SESSIO['valorObservacao'] : "";?></textarea>
+                <p class="erro-input" id="erro-observacao"><?=isset ($_SESSION['erroObservacao']) ? $_SESSION['erroObservacao'] : "";?></p>
        
                 <input type="submit">
             </form>
@@ -66,6 +69,9 @@
                 </tr>
             ";
         }
+
+        //Matando os dados de erro da sessão
+        session_unset();
     ?>
     </table>
     </div>
