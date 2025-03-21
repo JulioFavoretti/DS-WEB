@@ -14,8 +14,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Business System - Cliente</title>
-    <link rel="shortcut icon" href="./assets/img/icon.svg" type="imagex/png">
+    <title>Business System - Alteração Cliente</title>
+    <link rel="shortcut icon" href="../assets/img/icon.svg" type="imagex/png">
     <link rel="stylesheet" href="../assets/style/style.css">
 <body>
     <div class="menu">

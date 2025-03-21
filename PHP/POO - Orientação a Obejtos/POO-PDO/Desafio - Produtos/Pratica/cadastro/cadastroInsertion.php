@@ -25,6 +25,12 @@ $cargo = $_POST["cargo"];
 $email = $_POST["email"];
 $senha = $_POST["senha"];
 
+// Impedir que um gerente crie um chefe
+if ($_SESSION['cargo'] === "gerente" /* (caso chefe n possa tbm)|| $_SESSION['cargo'] === "chefe" */ && $cargo === "chefe") {
+    echo "<script>alert('Gerentes não podem criar usuários com cargo de Chefe.'); window.location.href = './index.php';</script>";
+    exit();
+}
+
 include "cadastroValida.php";
 
 if (validarDadosCadastro($nome, $cargo, $email, $senha)) {

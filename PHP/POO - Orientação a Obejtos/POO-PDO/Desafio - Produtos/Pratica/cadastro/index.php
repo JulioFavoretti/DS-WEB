@@ -96,6 +96,6 @@ if ($_SESSION['cargo'] !== "chefe" && $_SESSION['cargo'] !== "gerente") {
     </table>
 
 </body>
-<script src="../assets/js/script.js"></script>
+<script src="../assets/js/scriptValidaCadastro.js"></script>
 <script src="https://kit.fontawesome.com/56c1ac89b8.js" crossorigin="anonymous"></script>
 </html>

@@ -14,7 +14,7 @@ if (!isset($_SESSION['login']) || !isset($_SESSION['email'])) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Business System - Produto</title>
+    <title>Business System - Alteração Produto</title>
     <link rel="shortcut icon" href="../assets/img/icon.svg" type="imagex/png">
     <link rel="stylesheet" href="../assets/style/style.css">
 <body>
