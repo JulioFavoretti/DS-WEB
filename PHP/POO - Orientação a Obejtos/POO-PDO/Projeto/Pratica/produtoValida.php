@@ -1,17 +1,18 @@
 <?php
-//Inicializa as variáveis de erro
+// Inicializa as variáveis de erro
 $erroNome = $erroEmail = $erroObservacao = $erroIdade = "";
 
-//Função para limpar os dados de entrada
+// Função para limpar os dados de entrada
 function limpaEntrada($dado) {
-    $dado = trim($dado);   //Remove espaços extras
-    $dado = stripslashes($dado); //Remove barras invertidas
-    $dado = htmlspecialchars($dado); //converte caracteres especiais
+    $dado = trim($dado);   // Remove espaços extras
+    $dado = stripslashes($dado); // Remove barras invertidas
+    $dado = htmlspecialchars($dado); // Converte caracteres especiais
     return $dado;
 }
 
 function validaCliente($nome, $email, $observacao) {
     
+    // Validação do Nome
     if (empty($nome)) {
         $erroNome = "O nome é obrigatório";
     } else {
@@ -21,6 +22,7 @@ function validaCliente($nome, $email, $observacao) {
         }
     }
 
+    // Validação do E-mail
     if (empty($email)) {
         $erroEmail = "O e-mail é obrigatório";
     } else {
@@ -30,6 +32,7 @@ function validaCliente($nome, $email, $observacao) {
         }
     }
 
+    // Validação da Observacao
     if (!empty($observacao)) {
         $observacao = limpaEntrada($observacao);
         if (strlen($observacao) > 1000) {
@@ -52,17 +55,13 @@ function validaCliente($nome, $email, $observacao) {
     // Se tudo estiver correto, processa os dados
     if (empty($erroNome) && empty($erroEmail) && empty($erroObservacao)) {
         echo "Dados validados com sucesso!";
+        // Aqui você pode inserir os dados no banco de dados ou realizar outra ação
         return true;
     }else{
         session_start();
         $_SESSION['erroNome'] = $erroNome;
         $_SESSION['erroEmail'] = $erroEmail;
         $_SESSION['erroObservacao'] = $erroObservacao;
-
-        //Valores dos campos
-        $_SESSION['valorNome'] = $nome;
-        $_SESSION['valorEmail'] = $email;
-        $_SESSION['valorObservacao'] = $observacao;
         return false;
     }
 }
