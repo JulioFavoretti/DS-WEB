@@ -23,7 +23,14 @@
     <div class="container">
         <hr>
         <div class="carrinho">
-            <div><h2>Carrinho de compras</h2></div>
+            <div class="titulo-container">
+                <h2>
+                Carrinho de compras  
+                <a class="history" href='vendaExibir.php?id=$id'>
+                <i class='fa-solid fa-clock-rotate-left'></i>
+                </a>
+                </h2>
+            </div>
             <p id="aviso"></p>
             <p id="dadosCliente">Cliente: </p>
             <table id="tabelaCarrinho"></table>
@@ -86,9 +93,10 @@
             echo "</tr>";
         }
         echo "</table>";
-
+    
     ?>
     </div>
+    
 </body>
 <script src="./assets/js/venda.js"></script>
 <script src="https://kit.fontawesome.com/8403ba6cce.js" crossorigin="anonymous"></script>

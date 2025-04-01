@@ -182,3 +182,26 @@ li .meumenu-active {
     background-color: burlywood;
     color: white;
   }
+
+
+/*estilizando o botão historico*/
+.titulo-container {
+  position: relative; /* Para que o position: absolute funcione */
+}
+
+h2 {
+  display: flex;
+  justify-content: space-between; /* Separa o texto do ícone */
+  align-items: center;
+}
+
+.history {
+  position: absolute;
+  right: 0; /* Coloca o ícone no canto direito */
+  top: 45%;
+  transform: translateY(-50%); /* Centraliza verticalmente */
+}
+
+.history i {
+  font-size: 0.7em; /* Reduz apenas o ícone */
+}
