@@ -26,7 +26,7 @@
             <div class="titulo-container">
                 <h2>
                 Carrinho de compras  
-                <a class="history" href='vendaExibir.php?id=$id'>
+                <a class="history" href='./venda/vendaHistorico.php?id=$id'>
                 <i class='fa-solid fa-clock-rotate-left'></i>
                 </a>
                 </h2>

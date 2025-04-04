@@ -1,3 +1,4 @@
+/*Corpo geral pag*/
 body {
     background-color: #f4f4f4;
 }
@@ -55,8 +56,6 @@ a {
     color: black;
 }
 
-
-
 /* Código CSS do Menu Horizontal*/
 ul {
     width: 100%; 
@@ -111,7 +110,7 @@ li .meumenu-active {
     padding-left: 10px;
     padding-right: 10px;;
     text-align: center;
-    background-color: #04AA6D;
+    background-color:#04AA6D;
     color: white;
   }
 
@@ -195,6 +194,12 @@ h2 {
   align-items: center;
 }
 
+h1 {
+  display: flex;
+  justify-content: space-between; /* Separa o texto do ícone */
+  align-items: center;
+}
+
 .history {
   position: absolute;
   right: 0; /* Coloca o ícone no canto direito */
@@ -204,4 +209,45 @@ h2 {
 
 .history i {
   font-size: 0.7em; /* Reduz apenas o ícone */
+}
+
+
+/*Vendas Histórico*/
+#vendas {
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#vendas td, #customers th {
+  text-align: center;
+  border: 1px solid #ef58a1;
+  padding: 8px;
+}
+
+#vendas tr:nth-child(even){background-color: #e23dae;}
+
+#vendas tr:hover {background-color: #C3A2FF;}
+
+#vendas th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  padding-left: 10px;
+  padding-right: 10px;;
+  text-align: center;
+  background-color: #aa0489;
+  color: white;  
+  border: 1px solid #ef58a1;
+}
+
+#VENDASTITULO{
+  width: 50%;
+  text-align: center;
+  margin-left: 25%;
+}
+.hr {
+  border: 0.5px #ef58a1 solid;
+  width: 55%;
+  height: 3px;
+  background-color: #ef58a1;
 }
