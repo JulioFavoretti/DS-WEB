@@ -78,7 +78,8 @@
             //gera as listas necessárias para os campos que podem possuir mais de um valor
             $listaProdutos .= $produto['nome']. "<br>";
             $listaQuantidades .= $quantidade . "<br>";
-            $listaPreco .= "R$" . $produto['preco'] . "<br>";
+            $listaPreco .= "R$" . number_format($produto['preco'], 2, ',', '.') . "<br>";
+
             
         }
         
@@ -89,7 +90,7 @@
         echo "<td>" . $venda['dataVenda'] . "</td>";
         echo "<td>" . $cliente['nome'] . "</td>";
         echo "<td>" . $listaProdutos . "</td>";
-        echo "<td>R$ " . number_format($precoFinal, 2, ',', '.') . "</td>";
+        echo "<td>R$ " . $listaPreco . "</td>"; 
         echo "<td>" . $listaQuantidades . "</td>";
         echo "<td>R$ " . number_format($precoFinal, 2, ',', '.') . "</td>";
         echo "</tr>";
