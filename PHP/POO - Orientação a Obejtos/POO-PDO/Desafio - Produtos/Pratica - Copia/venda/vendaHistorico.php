@@ -89,7 +89,7 @@
         echo "<td>" . $venda['dataVenda'] . "</td>";
         echo "<td>" . $cliente['nome'] . "</td>";
         echo "<td>" . $listaProdutos . "</td>";
-        echo "<td>" . $listaPreco . "</td>"; 
+        echo "<td>R$ " . number_format($precoFinal, 2, ',', '.') . "</td>";
         echo "<td>" . $listaQuantidades . "</td>";
         echo "<td>R$ " . number_format($precoFinal, 2, ',', '.') . "</td>";
         echo "</tr>";
