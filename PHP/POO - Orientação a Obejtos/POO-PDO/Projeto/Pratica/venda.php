@@ -22,6 +22,7 @@
     </div>
     <div class="container">
         <hr>
+        <a href="./venda/vendaHistorico.php"><button class="vendaHistorico"><i class="fa-solid fa-clock-rotate-left"></i> Histórico de Vendas</button></a>
         <div class="carrinho">
             <div><h2>Carrinho de compras</h2></div>
             <p id="aviso"></p>
@@ -61,7 +62,7 @@
         /* ==================== FIM DO CLIENTE E INICIO DO PRODUTO ==================== */
 
         echo "<h4>Selecione os Produtos</h4>";
-        $dados = $db->query("SELECT * FROM produto");
+        $dados = $db->query("SELECT * FROM produtos");
         $todos = $dados->fetchAll(PDO::FETCH_ASSOC); //Todos os registros retornados
         echo "<table id='produtos'>";
         echo "

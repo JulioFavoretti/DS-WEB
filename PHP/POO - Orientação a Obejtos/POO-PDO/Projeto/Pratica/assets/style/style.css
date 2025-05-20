@@ -182,3 +182,16 @@ li .meumenu-active {
     background-color: burlywood;
     color: white;
   }
+
+/* Aplicando estilo ao botão de historico de venda*/
+.vendaHistorico {
+  margin-top: 15px;
+  width: 100%;
+  padding: 10px;
+  border: none;
+  background-color: #28a745;
+  color: white;
+  font-size: 16px;
+  border-radius: 4px;
+  cursor: pointer;
+}

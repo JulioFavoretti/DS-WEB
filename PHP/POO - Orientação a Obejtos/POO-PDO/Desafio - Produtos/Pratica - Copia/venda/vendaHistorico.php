@@ -4,7 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Histórico de Vendas</title>
+    <link rel="shortcut icon" type="imagex/png" href="../assets/img/ico.svg">
     <link rel="stylesheet" href="../assets/style/style.css">
 </head>
 <body>
@@ -79,7 +80,7 @@
             $listaProdutos .= $produto['nome']. "<br>";
             $listaQuantidades .= $quantidade . "<br>";
             $listaPreco .= "R$" . number_format($produto['preco'], 2, ',', '.') . "<br>";
-
+            
             
         }
         
@@ -90,7 +91,7 @@
         echo "<td>" . $venda['dataVenda'] . "</td>";
         echo "<td>" . $cliente['nome'] . "</td>";
         echo "<td>" . $listaProdutos . "</td>";
-        echo "<td>R$ " . $listaPreco . "</td>"; 
+        echo "<td>" . $listaPreco . "</td>"; 
         echo "<td>" . $listaQuantidades . "</td>";
         echo "<td>R$ " . number_format($precoFinal, 2, ',', '.') . "</td>";
         echo "</tr>";
