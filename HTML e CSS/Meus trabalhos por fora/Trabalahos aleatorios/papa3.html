@@ -1,0 +1,739 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Papa Leão XIV - O Novo Pontífice</title>
+    <style>
+        /* Reset e Estilos Globais */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Palatino', 'Georgia', serif;
+        }
+        
+        :root {
+            --vatican-yellow: #FFD700;
+            --vatican-white: #F4F4F4;
+            --vatican-red: #C41E3A;
+            --dark: #222222;
+            --light-gray: #EEEEEE;
+        }
+        
+        body {
+            background-color: var(--vatican-white);
+            color: var(--dark);
+            line-height: 1.7;
+        }
+        
+        /* Header */
+        header {
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1551275074-225b5a5430f3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 2rem;
+            text-align: center;
+            min-height: 50vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            position: relative;
+        }
+        
+        .header-content {
+            position: relative;
+            z-index: 2;
+        }
+        
+        .logo {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            color: var(--vatican-yellow);
+            font-family: 'Times New Roman', serif;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+        
+        .slogan {
+            font-style: italic;
+            margin-bottom: 2rem;
+            font-size: 1.3rem;
+            color: var(--vatican-white);
+        }
+        
+        .breaking-news {
+            background-color: var(--vatican-red);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            display: inline-block;
+            margin-bottom: 1rem;
+            font-weight: bold;
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+        
+        /* Navegação */
+        nav {
+            background-color: var(--vatican-red);
+            padding: 1rem;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 1.5rem;
+        }
+        
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+        }
+        
+        nav a:hover, .current-page {
+            background-color: var(--vatican-yellow);
+            color: var(--dark);
+        }
+        
+        /* Conteúdo Principal */
+        .container {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 2rem;
+        }
+        
+        /* Artigos */
+        .articles-container {
+            display: grid;
+            gap: 2rem;
+        }
+        
+        article {
+            background-color: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        article:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+        }
+        
+        .article-image {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            border-bottom: 4px solid var(--vatican-red);
+        }
+        
+        .article-content {
+            padding: 1.5rem;
+        }
+        
+        .article-meta {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 1rem;
+            color: #666;
+            font-size: 0.9rem;
+        }
+        
+        .article-tag {
+            background-color: var(--vatican-red);
+            color: white;
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            display: inline-block;
+            margin-bottom: 1rem;
+        }
+        
+        .article-title {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            color: var(--vatican-red);
+        }
+        
+        .article-excerpt {
+            margin-bottom: 1.5rem;
+        }
+        
+        .read-more {
+            display: inline-block;
+            background-color: var(--vatican-red);
+            color: white;
+            padding: 0.6rem 1.2rem;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+        
+        .read-more:hover {
+            background-color: #a51932;
+        }
+        
+        /* Sidebar */
+        aside {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+        
+        .sidebar-widget {
+            background-color: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .widget-title {
+            color: var(--vatican-red);
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--vatican-yellow);
+            font-size: 1.3rem;
+        }
+        
+        .news-item {
+            margin-bottom: 1.5rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 1px solid var(--light-gray);
+        }
+        
+        .news-item:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+        
+        .news-item h3 {
+            margin-bottom: 0.5rem;
+            font-size: 1.1rem;
+        }
+        
+        .news-item-date {
+            color: #666;
+            font-size: 0.8rem;
+        }
+        
+        /* Biografia do Papa */
+        .pope-bio {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+        
+        .pope-portrait {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid var(--vatican-yellow);
+            margin-bottom: 1rem;
+        }
+        
+        /* Newsletter */
+        .newsletter-form {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+        
+        .newsletter-form input {
+            padding: 0.8rem;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 1rem;
+        }
+        
+        .newsletter-form button {
+            background-color: var(--vatican-yellow);
+            color: var(--dark);
+            border: none;
+            padding: 0.8rem;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+        
+        .newsletter-form button:hover {
+            background-color: #e6c200;
+        }
+        
+        /* Paginação */
+        .pagination {
+            display: flex;
+            justify-content: center;
+            gap: 0.5rem;
+            margin-top: 2rem;
+        }
+        
+        .page-link {
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            background-color: var(--vatican-white);
+            color: var(--dark);
+            text-decoration: none;
+            border-radius: 4px;
+            transition: all 0.3s;
+            border: 1px solid #ddd;
+        }
+        
+        .page-link:hover, .current-page {
+            background-color: var(--vatican-red);
+            color: white;
+            border-color: var(--vatican-red);
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--dark);
+            color: white;
+            padding: 3rem 1rem;
+            margin-top: 3rem;
+        }
+        
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+        
+        .footer-column h3 {
+            color: var(--vatican-yellow);
+            margin-bottom: 1.5rem;
+            font-size: 1.2rem;
+        }
+        
+        .footer-column ul {
+            list-style: none;
+        }
+        
+        .footer-column li {
+            margin-bottom: 0.8rem;
+        }
+        
+        .footer-column a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .footer-column a:hover {
+            color: var(--vatican-yellow);
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        
+        .social-links a {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            background-color: #444;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background-color 0.3s;
+        }
+        
+        .social-links a:hover {
+            background-color: var(--vatican-red);
+        }
+        
+        .copyright {
+            text-align: center;
+            margin-top: 3rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid #444;
+            font-size: 0.9rem;
+        }
+        
+        /* Responsividade */
+        @media (max-width: 768px) {
+            .container {
+                grid-template-columns: 1fr;
+            }
+            
+            .menu-toggle {
+                display: block;
+            }
+            
+            nav ul {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background-color: var(--vatican-red);
+                padding: 1rem;
+            }
+            
+            nav ul.show {
+                display: flex;
+            }
+            
+            .logo {
+                font-size: 2.5rem;
+            }
+            
+            .slogan {
+                font-size: 1.1rem;
+            }
+        }
+        
+        /* Efeitos Especiais */
+        .vatican-flag {
+            height: 20px;
+            vertical-align: middle;
+            margin-right: 5px;
+        }
+        
+        .quote-box {
+            background-color: #f9f9f9;
+            border-left: 4px solid var(--vatican-yellow);
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            font-style: italic;
+        }
+        
+        .quote-author {
+            text-align: right;
+            font-weight: bold;
+            margin-top: 0.5rem;
+            color: var(--vatican-red);
+        }
+    </style>
+</head>
+<body>
+    <!-- Cabeçalho -->
+    <header>
+        <div class="header-content">
+            <span class="breaking-news">ÚLTIMA HORA: Papa Leão XIV eleito ontem</span>
+            <h1 class="logo">Papa Leão XIV</h1>
+            <p class="slogan">Seguindo os passos de São Pedro no século XXI</p>
+        </div>
+    </header>
+    
+    <!-- Navegação -->
+    <nav>
+        <div class="nav-container">
+            <button class="menu-toggle" id="menuToggle">☰</button>
+            <ul id="mainMenu">
+                <li><a href="index.html" class="current-page">Início</a></li>
+                <li><a href="biografia.html">Biografia</a></li>
+                <li><a href="discursos.html">Discursos</a></li>
+                <li><a href="viagens.html">Viagens Apostólicas</a></li>
+                <li><a href="vaticano.html">O Vaticano</a></li>
+                <li><a href="contato.html">Contato</a></li>
+            </ul>
+        </div>
+    </nav>
+    
+    <!-- Conteúdo Principal -->
+    <div class="container">
+        <main class="articles-container">
+            <!-- Artigo em Destaque -->
+            <article>
+                <img src="https://images.unsplash.com/photo-1589998059171-988d887df646?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1476&q=80" alt="Eleição do Papa Leão XIV" class="article-image">
+                <div class="article-content">
+                    <span class="article-tag">Eleição Papal</span>
+                    <div class="article-meta">
+                        <span>Por Carlos Ribeiro</span>
+                        <span>16 de Junho, 2024</span>
+                    </div>
+                    <h2 class="article-title">Fumaça Branca: Cardeal Giuseppe Moretti eleito Papa Leão XIV</h2>
+                    <p class="article-excerpt">Após dois dias de conclave, os cardeais eleitores escolheram o italiano Giuseppe Moretti como novo Sumo Pontífice da Igreja Católica, que adotou o nome de Leão XIV. A eleição ocorreu na Capela Sistina e foi anunciada ao mundo com o tradicional "Habemus Papam".</p>
+                    
+                    <div class="quote-box">
+                        "Aceito com humildade esta grande responsabilidade que me foi confiada. Rezo para que o Espírito Santo me guie no serviço à Santa Igreja."
+                        <div class="quote-author">- Papa Leão XIV</div>
+                    </div>
+                    
+                    <p>O novo Papa, de 68 anos, era anteriormente Arcebispo de Milão e é conhecido por seu trabalho com os pobres e seu profundo conhecimento teológico. Sua eleição representa uma continuidade com algumas políticas do pontificado anterior, mas também promete novas abordagens para os desafios da Igreja no século XXI.</p>
+                    <a href="eleicao-papa-leao-xiv.html" class="read-more">Ler a matéria completa</a>
+                </div>
+            </article>
+            
+            <!-- Artigo 2 -->
+            <article>
+                <img src="https://images.unsplash.com/photo-1544830288-5a1e672118b9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Primeira Aparição do Papa" class="article-image">
+                <div class="article-content">
+                    <span class="article-tag">Primeiras Ações</span>
+                    <div class="article-meta">
+                        <span>Por Ana Beatriz</span>
+                        <span>16 de Junho, 2024</span>
+                    </div>
+                    <h2 class="article-title">Primeira Bênção Urbi et Orbi: As Palavras que Comovem o Mundo</h2>
+                    <p class="article-excerpt">Em sua primeira aparição pública como Pontífice, Leão XIV surpreendeu ao falar espontaneamente com os fiéis antes da bênção tradicional, pedindo orações por sua pessoa e enfatizando a necessidade de unidade na Igreja.</p>
+                    
+                    <p>Diferentemente do protocolo habitual, o novo Papa desceu até a multidão na Praça São Pedro para abraçar crianças e idosos, gesto que foi amplamente elogiado. Analistas apontam que este pode ser o tom de seu pontificado - uma combinação de tradição e gestos inovadores de proximidade.</p>
+                    <a href="primeira-bencao-urbi-et-orbi.html" class="read-more">Ler a matéria completa</a>
+                </div>
+            </article>
+            
+            <!-- Artigo 3 -->
+            <article>
+                <img src="https://images.unsplash.com/photo-1529107386315-e1a2ed48a620?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Reações à Eleição" class="article-image">
+                <div class="article-content">
+                    <span class="article-tag">Reações</span>
+                    <div class="article-meta">
+                        <span>Por Pedro Henrique</span>
+                        <span>16 de Junho, 2024</span>
+                    </div>
+                    <h2 class="article-title">Como o Mundo Recebeu a Eleição de Leão XIV</h2>
+                    <p class="article-excerpt">Líderes religiosos e políticos de todo o mundo enviaram mensagens de congratulação ao novo Papa. O Presidente dos EUA destacou seu "compromisso com a justiça social", enquanto o Patriarca de Constantinopla expressou esperança por "avanços no diálogo ecumênico".</p>
+                    
+                    <p>Dentro da Igreja, a reação foi majoritariamente positiva, embora alguns setores mais conservadores tenham expressado cautela diante de posições anteriores do novo Papa sobre questões como a participação dos leigos na governança da Igreja. Especialistas acreditam que Leão XIV buscará um equilíbrio entre progressistas e conservadores.</p>
+                    <a href="reacoes-eleicao-leao-xiv.html" class="read-more">Ler a matéria completa</a>
+                </div>
+            </article>
+            
+            <!-- Artigo 4 -->
+            <article>
+                <img src="https://images.unsplash.com/photo-1573804635550-d4c6c0e6d3cc?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Análise do Nome Escolhido" class="article-image">
+                <div class="article-content">
+                    <span class="article-tag">Análise</span>
+                    <div class="article-meta">
+                        <span>Por Maria Fernanda</span>
+                        <span>15 de Junho, 2024</span>
+                    </div>
+                    <h2 class="article-title">Por que Leão XIV? O Significado do Nome Escolhido</h2>
+                    <p class="article-excerpt">A escolha do nome "Leão" pelo novo Papa não foi aleatória. Especialistas em história da Igreja apontam que este nome evoca tanto Leão XIII (1878-1903), conhecido por sua encíclica sobre justiça social, quanto Leão o Grande (século V), defensor da primazia romana.</p>
+                    
+                    <p>O numeral XIV sugere uma continuidade com essa tradição, mas também uma atualização para os desafios contemporâneos. O último Papa a usar o nome Leão foi Leão XIII, há mais de 120 anos, o que torna a escolha particularmente significativa.</p>
+                    <a href="significado-nome-leao-xiv.html" class="read-more">Ler a matéria completa</a>
+                </div>
+            </article>
+            
+            <!-- Paginação -->
+            <div class="pagination">
+                <a href="#" class="page-link current-page">1</a>
+                <a href="pagina2.html" class="page-link">2</a>
+                <a href="pagina3.html" class="page-link">3</a>
+                <a href="pagina4.html" class="page-link">4</a>
+                <a href="pagina2.html" class="page-link">Próxima &raquo;</a>
+            </div>
+        </main>
+        
+        <!-- Sidebar -->
+        <aside>
+            <!-- Biografia Resumida -->
+            <div class="sidebar-widget pope-bio">
+                <h2 class="widget-title">Papa Leão XIV</h2>
+                <img src="https://images.unsplash.com/photo-1581595219315-a187dd40c322?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Papa Leão XIV" class="pope-portrait">
+                <p><strong>Nome:</strong> Giuseppe Moretti</p>
+                <p><strong>Idade:</strong> 68 anos</p>
+                <p><strong>Nacionalidade:</strong> Italiana</p>
+                <p><strong>Eleito:</strong> 15 de Junho de 2024</p>
+                <a href="biografia.html" class="read-more" style="margin-top: 1rem;">Biografia Completa</a>
+            </div>
+            
+            <!-- Últimas Notícias -->
+            <div class="sidebar-widget">
+                <h2 class="widget-title">Últimas Notícias</h2>
+                <div class="news-item">
+                    <h3>Papa Leão XIV nomeia novos membros para a Cúria</h3>
+                    <p class="news-item-date">16 de Junho, 2024 - 14:30</p>
+                </div>
+                <div class="news-item">
+                    <h3>Primeira audiência geral marcada para quarta-feira</h3>
+                    <p class="news-item-date">16 de Junho, 2024 - 12:15</p>
+                </div>
+                <div class="news-item">
+                    <h3>Vaticano anuncia programa de eventos para início do pontificado</h3>
+                    <p class="news-item-date">16 de Junho, 2024 - 10:00</p>
+                </div>
+                <div class="news-item">
+                    <h3>Missa de inauguração do pontificado será no domingo</h3>
+                    <p class="news-item-date">15 de Junho, 2024 - 18:45</p>
+                </div>
+                <a href="noticias.html" class="read-more" style="display: block; text-align: center; margin-top: 1rem;">Ver Todas</a>
+            </div>
+            
+            <!-- Agenda do Papa -->
+            <div class="sidebar-widget">
+                <h2 class="widget-title">Agenda do Papa</h2>
+                <div class="news-item">
+                    <h3>17/06 - Encontro com Cardeais</h3>
+                    <p>Sala Clementina, Vaticano</p>
+                </div>
+                <div class="news-item">
+                    <h3>19/06 - Audiência Geral</h3>
+                    <p>Praça São Pedro</p>
+                </div>
+                <div class="news-item">
+                    <h3>23/06 - Missa de Inauguração</h3>
+                    <p>Basílica de São Pedro</p>
+                </div>
+                <a href="agenda.html" class="read-more" style="display: block; text-align: center; margin-top: 1rem;">Agenda Completa</a>
+            </div>
+            
+            <!-- Newsletter -->
+            <div class="sidebar-widget">
+                <h2 class="widget-title">Receba Atualizações</h2>
+                <form class="newsletter-form" id="newsletterForm">
+                    <input type="text" placeholder="Seu Nome" required>
+                    <input type="email" placeholder="Seu E-mail" required>
+                    <button type="submit">Assinar Newsletter</button>
+                </form>
+            </div>
+        </aside>
+    </div>
+    
+    <!-- Rodapé -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-column">
+                <h3>Sobre Nós</h3>
+                <p>O blog "Papa Leão XIV" é uma fonte independente de notícias e análises sobre o novo pontificado, comprometida com a precisão jornalística e o respeito à fé católica.</p>
+            </div>
+            
+            <div class="footer-column">
+                <h3>Links Rápidos</h3>
+                <ul>
+                    <li><a href="index.html">Início</a></li>
+                    <li><a href="biografia.html">Biografia do Papa</a></li>
+                    <li><a href="vaticano.html">O Vaticano</a></li>
+                    <li><a href="galeria.html">Galeria de Fotos</a></li>
+                    <li><a href="contato.html">Contato</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-column">
+                <h3>Recursos</h3>
+                <ul>
+                    <li><a href="documentos.html">Documentos do Pontificado</a></li>
+                    <li><a href="discursos.html">Discursos Completos</a></li>
+                    <li><a href="enciclicas.html">Encíclicas</a></li>
+                    <li><a href="oracoes.html">Orações do Papa</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-column">
+                <h3>Redes Sociais</h3>
+                <div class="social-links">
+                    <a href="https://facebook.com" aria-label="Facebook">📱</a>
+                    <a href="https://twitter.com" aria-label="Twitter">🐦</a>
+                    <a href="https://instagram.com" aria-label="Instagram">📸</a>
+                    <a href="https://youtube.com" aria-label="YouTube">▶️</a>
+                </div>
+                <p>Email: contato@papaleaoxiv.com</p>
+                <p>Telefone: +39 06 123456</p>
+            </div>
+        </div>
+        
+        <div class="copyright">
+            <p>&copy; 2024 Papa Leão XIV - Todos os direitos reservados | Desenvolvido com ♥ para a Igreja</p>
+        </div>
+    </footer>
+    
+    <script>
+        // Menu Mobile
+        document.getElementById('menuToggle').addEventListener('click', function() {
+            document.getElementById('mainMenu').classList.toggle('show');
+        });
+        
+        // Newsletter Form
+        document.getElementById('newsletterForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Obrigado por assinar nossa newsletter! Você receberá as últimas notícias sobre o Papa Leão XIV em seu e-mail.');
+            this.reset();
+        });
+        
+        // Efeito de carregamento suave
+        document.addEventListener('DOMContentLoaded', function() {
+            setTimeout(function() {
+                document.body.style.opacity = '1';
+            }, 100);
+        });
+        
+        // Botão de Voltar ao Topo (adicionado dinamicamente)
+        const backToTop = document.createElement('a');
+        backToTop.href = '#';
+        backToTop.innerHTML = '↑';
+        backToTop.style.position = 'fixed';
+        backToTop.style.bottom = '20px';
+        backToTop.style.right = '20px';
+        backToTop.style.backgroundColor = 'var(--vatican-red)';
+        backToTop.style.color = 'white';
+        backToTop.style.width = '50px';
+        backToTop.style.height = '50px';
+        backToTop.style.borderRadius = '50%';
+        backToTop.style.display = 'flex';
+        backToTop.style.alignItems = 'center';
+        backToTop.style.justifyContent = 'center';
+        backToTop.style.fontSize = '1.5rem';
+        backToTop.style.textDecoration = 'none';
+        backToTop.style.boxShadow = '0 2px 10px rgba(0,0,0,0.2)';
+        backToTop.style.zIndex = '99';
+        backToTop.style.opacity = '0';
+        backToTop.style.transition = 'opacity 0.3s';
+        
+        document.body.appendChild(backToTop);
+        
+        window.addEventListener('scroll', function() {
+            if (window.scrollY > 300) {
+                backToTop.style.opacity = '1';
+            } else {
+                backToTop.style.opacity = '0';
+            }
+        });
+        
+        backToTop.addEventListener('click', function(e) {
+            e.preventDefault();
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    </script>
+</body>
+</html>

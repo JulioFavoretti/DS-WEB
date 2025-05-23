@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Blog do Papa Leão XIV</title>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+  <header>
+    <h1>Papa Leão XIV</h1>
+    <nav>
+      <button onclick="showPage('home')">Início</button>
+      <button onclick="showPage('noticias')">Notícias</button>
+      <button onclick="showPage('sobre')">Sobre o Papa</button>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Página Inicial -->
+    <section id="home" class="page active">
+      <h2>Bem-vindo ao Blog do Papa Leão XIV</h2>
+      <p>Este blog reúne todas as notícias e informações recentes sobre o pontificado de Leão XIV.</p>
+    </section>
+
+    <!-- Página de Notícias -->
+    <section id="noticias" class="page">
+      <h2>Últimas Notícias</h2>
+      <ul>
+        <li>
+          <h3>Leão XIV anuncia iniciativa global de paz</h3>
+          <p>O papa propõe um pacto entre as nações para o desarmamento...</p>
+          <a href="#" onclick="abrirNoticia(1)">Ler mais</a>
+        </li>
+        <li>
+          <h3>Viagem histórica à África</h3>
+          <p>O Papa Leão XIV visita regiões devastadas por conflitos...</p>
+          <a href="#" onclick="abrirNoticia(2)">Ler mais</a>
+        </li>
+        <li>
+          <h3>Encíclica sobre tecnologia e fé</h3>
+          <p>O papa lança um novo documento abordando IA e espiritualidade...</p>
+          <a href="#" onclick="abrirNoticia(3)">Ler mais</a>
+        </li>
+      </ul>
+    </section>
+
+    <!-- Página de Detalhe de Notícia -->
+    <section id="noticia-detalhe" class="page">
+      <button onclick="showPage('noticias')">← Voltar às notícias</button>
+      <h2 id="titulo-noticia"></h2>
+      <p id="conteudo-noticia"></p>
+    </section>
+
+    <!-- Página Sobre -->
+    <section id="sobre" class="page">
+      <h2>Sobre o Papa Leão XIV</h2>
+      <p>Leão XIV é conhecido por sua visão moderna e foco em justiça social, diálogo inter-religioso e meio ambiente.</p>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 Blog do Papa Leão XIV. Todos os direitos reservados.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

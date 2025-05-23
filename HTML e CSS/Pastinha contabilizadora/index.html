@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Julio ❤️ Giovanna</title>
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#ffe6f0"/>
+  <style>
+    body {
+      background-color: #ffe6f0;
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      position: relative;
+      overflow: hidden;
+    }
+    .container {
+      background: white;
+      padding: 40px;
+      border-radius: 20px;
+      box-shadow: 0 0 20px rgba(0,0,0,0.2);
+      text-align: center;
+      z-index: 1;
+    }
+    h1 {
+      color: #d63384;
+      font-size: 2em;
+      margin-bottom: 20px;
+    }
+    .contador {
+      font-size: 1.5em;
+      color: #333;
+      margin-bottom: 10px;
+    }
+    .desde {
+      font-size: 1.1em;
+      color: #888;
+      font-style: italic;
+    }
+    .tempo-detalhado {
+      position: absolute;
+      bottom: 20px;
+      right: 20px;
+      font-size: 0.95em;
+      color: #666;
+      font-style: italic;
+    }
+    .cronometro-aniversario {
+      position: absolute;
+      top: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 2em;
+      color: #ff4081;
+      background-color: white;
+      padding: 10px 20px;
+      border-radius: 12px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      display: none;
+      z-index: 2;
+    }
+    .confete {
+      position: absolute;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background-color: #ff69b4;
+      animation: cair 3s linear infinite;
+    }
+    @keyframes cair {
+      from { transform: translateY(-20px); opacity: 1; }
+      to { transform: translateY(100vh); opacity: 0; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Julio ❤️ Giovanna</h1>
+    <div class="contador" id="contador"></div>
+    <div class="desde">Desde 29 de junho de 2024 — o começo do nosso para sempre 💌</div>
+  </div>
+  <div class="tempo-detalhado" id="tempoDetalhado"></div>
+  <div class="cronometro-aniversario" id="cronometro"></div>
+
+  <script>
+    function atualizarTempo() {
+      const dataInicio = new Date("2024-06-29T00:00:00");
+      const agora = new Date(); // <-- agora usa a data e hora real!
+
+      const diffMs = agora - dataInicio;
+      const segundos = Math.floor(diffMs / 1000);
+      const minutos = Math.floor(segundos / 60);
+      const horas = Math.floor(minutos / 60);
+      const dias = Math.floor(horas / 24);
+      const meses = Math.floor(dias / 30.4375);
+
+      const diasRestantes = dias % Math.floor(30.4375);
+      const horasRestantes = horas % 24;
+      const minutosRestantes = minutos % 60;
+      const segundosRestantes = segundos % 60;
+
+      document.getElementById("contador").innerText =
+        `Estamos juntos há ${dias} dias 💕`;
+
+      document.getElementById("tempoDetalhado").innerText =
+        `${meses} meses, ${diasRestantes} dias, ${horasRestantes}h ${minutosRestantes}min ${segundosRestantes}s de amor 💖`;
+
+      const proximoAniversario = new Date(dataInicio);
+      proximoAniversario.setFullYear(dataInicio.getFullYear() + Math.floor(dias / 365) + 1);
+
+      const diffParaAniversario = proximoAniversario - agora;
+
+      if (diffParaAniversario <= 86400000 && diffParaAniversario > 0) {
+        const horasFaltando = Math.floor((diffParaAniversario / (1000 * 60 * 60)) % 24);
+        const minutosFaltando = Math.floor((diffParaAniversario / (1000 * 60)) % 60);
+        const segundosFaltando = Math.floor((diffParaAniversario / 1000) % 60);
+
+        const cronometro = document.getElementById("cronometro");
+        cronometro.style.display = 'block';
+        cronometro.innerText = `Faltam ${horasFaltando}h ${minutosFaltando}min ${segundosFaltando}s para nosso ${Math.floor(dias / 365) + 1}º aniversário! 🥳`;
+      } else {
+        document.getElementById("cronometro").style.display = 'none';
+      }
+
+      const hoje = agora.toISOString().slice(0, 10);
+      const aniversarioHoje = new Date(dataInicio);
+      aniversarioHoje.setFullYear(agora.getFullYear());
+      const aniversarioHojeStr = aniversarioHoje.toISOString().slice(0, 10);
+
+      if (hoje === aniversarioHojeStr && !window.jaComemorouHoje) {
+        window.jaComemorouHoje = true;
+
+        const cronometro = document.getElementById("cronometro");
+        cronometro.style.display = 'block';
+        cronometro.innerText = `🎉 Feliz ${Math.floor(dias / 365)}º aniversário de namoro, Julio e Giovanna! 💞`;
+
+        for (let i = 0; i < 100; i++) {
+          const confete = document.createElement("div");
+          confete.classList.add("confete");
+          confete.style.left = Math.random() * 100 + "vw";
+          confete.style.backgroundColor = `hsl(${Math.random() * 360}, 100%, 70%)`;
+          document.body.appendChild(confete);
+          setTimeout(() => confete.remove(), 3000);
+        }
+
+        alert(`🎉 Feliz ${Math.floor(dias / 365)}º aniversário de namoro, Julio e Giovanna! Que venham muitos outros! 💞`);
+      }
+    }
+
+    atualizarTempo();
+    setInterval(atualizarTempo, 1000);
+
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('service-worker.js')
+          .then(reg => console.log('Service Worker registrado', reg))
+          .catch(err => console.log('Erro ao registrar Service Worker', err));
+      });
+    }
+  </script>
+</body>
+</html>

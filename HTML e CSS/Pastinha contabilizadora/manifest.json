@@ -1,0 +1,21 @@
+{
+    "name": "Julio ❤️ Giovanna",
+    "short_name": "J&G",
+    "start_url": "/index.html",
+    "display": "standalone",
+    "background_color": "#ffe6f0",
+    "theme_color": "#ffe6f0",
+    "description": "Contador de amor de Julio e Giovanna 💞",
+    "icons": [
+      {
+        "src": "icon.png",
+        "sizes": "192x192",
+        "type": "image/png"
+      },
+      {
+        "src": "icon.png",
+        "sizes": "512x512",
+        "type": "image/png"
+      }
+    ]
+  }

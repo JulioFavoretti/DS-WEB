@@ -1,0 +1,814 @@
+/* Estilos Globais */
+:root {
+    --vatican-yellow: #FFD700;
+    --vatican-white: #F4F4F4;
+    --vatican-red: #C41E3A;
+    --usa-blue: #002366;
+    --usa-red: #BF0A30;
+    --dark: #222222;
+    --light-gray: #EEEEEE;
+    --medium-gray: #CCCCCC;
+    --dark-gray: #555555;
+    --font-serif: 'Playfair Display', serif;
+    --font-sans: 'Raleway', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-sans);
+    color: var(--dark);
+    line-height: 1.7;
+    background-color: var(--vatican-white);
+    overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-serif);
+    font-weight: 700;
+    color: var(--dark);
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: all 0.3s ease;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Cabeçalho */
+header {
+    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), 
+                url('../images/vaticano-bandeira.jpg');
+    background-size: cover;
+    background-position: center;
+    color: white;
+    padding: 2rem;
+    text-align: center;
+    min-height: 70vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    border-bottom: 10px solid var(--usa-blue);
+}
+
+.header-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(196,30,58,0.3) 0%, rgba(0,35,102,0.5) 100%);
+    z-index: 1;
+}
+
+.header-content {
+    position: relative;
+    z-index: 2;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+.breaking-news {
+    background: linear-gradient(90deg, var(--usa-blue), var(--vatican-red));
+    color: white;
+    padding: 0.8rem 1.5rem;
+    border-radius: 5px;
+    display: inline-block;
+    margin-bottom: 1.5rem;
+    font-weight: 600;
+    font-size: 1.1rem;
+    animation: pulse 2s infinite;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-family: var(--font-sans);
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+.logo {
+    font-size: 4.5rem;
+    margin-bottom: 1rem;
+    color: var(--vatican-yellow);
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+    font-weight: 700;
+    font-family: var(--font-serif);
+    letter-spacing: 1px;
+}
+
+.slogan {
+    font-style: italic;
+    margin-bottom: 2rem;
+    font-size: 1.5rem;
+    color: var(--vatican-white);
+    font-weight: 300;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.election-date {
+    margin-top: 2rem;
+}
+
+.election-date span {
+    background-color: rgba(0,0,0,0.7);
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 1.1rem;
+}
+
+.flag-stripe {
+    height: 8px;
+    background: repeating-linear-gradient(
+        180deg,
+        var(--usa-red),
+        var(--usa-red) 16px,
+        white 16px,
+        white 32px
+    );
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    right: 0;
+}
+
+/* Navegação */
+nav {
+    background: linear-gradient(90deg, var(--usa-blue), var(--vatican-red));
+    padding: 1rem;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 15px rgba(0,0,0,0.2);
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.8rem;
+    cursor: pointer;
+    padding: 0.5rem;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 1.5rem;
+}
+
+nav a {
+    color: white;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+nav a:hover, nav .current-page {
+    background-color: var(--vatican-yellow);
+    color: var(--dark);
+}
+
+/* Container Principal */
+.container {
+    max-width: 1200px;
+    margin: 3rem auto;
+    padding: 0 2rem;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 3rem;
+}
+
+/* Artigos */
+.articles-container {
+    display: grid;
+    gap: 3rem;
+}
+
+.featured-article {
+    background-color: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+    position: relative;
+}
+
+.featured-article:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+}
+
+.article-image-container {
+    position: relative;
+    overflow: hidden;
+    height: 400px;
+}
+
+.article-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.image-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to top, rgba(0,0,0,0.7) 0%, transparent 50%);
+}
+
+.featured-article:hover .article-image {
+    transform: scale(1.05);
+}
+
+.article-content {
+    padding: 2rem;
+    position: relative;
+}
+
+.article-tag {
+    background-color: var(--vatican-red);
+    color: white;
+    padding: 0.4rem 1rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    display: inline-block;
+    margin-bottom: 1rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.article-meta {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1.5rem;
+    color: var(--dark-gray);
+    font-size: 0.9rem;
+    font-family: var(--font-sans);
+}
+
+.article-title {
+    font-size: 2.2rem;
+    margin-bottom: 1.5rem;
+    color: var(--dark);
+    line-height: 1.3;
+}
+
+.article-excerpt {
+    margin-bottom: 2rem;
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: var(--dark-gray);
+}
+
+.article-excerpt p {
+    margin-bottom: 1.5rem;
+}
+
+blockquote {
+    border-left: 4px solid var(--vatican-yellow);
+    padding-left: 1.5rem;
+    margin: 2rem 0;
+    font-style: italic;
+    font-size: 1.2rem;
+    color: var(--dark);
+}
+
+cite {
+    display: block;
+    margin-top: 0.5rem;
+    font-style: normal;
+    font-size: 0.9rem;
+    color: var(--dark-gray);
+}
+
+.read-more {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background-color: var(--vatican-red);
+    color: white;
+    padding: 0.8rem 1.5rem;
+    border-radius: 4px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.read-more:hover {
+    background-color: var(--usa-blue);
+    transform: translateX(5px);
+}
+
+.regular-article {
+    background-color: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.regular-article:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+.regular-article .article-image-container {
+    height: 250px;
+}
+
+.regular-article .article-title {
+    font-size: 1.8rem;
+}
+
+/* Sidebar */
+.sidebar-widget {
+    background-color: white;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    margin-bottom: 2rem;
+}
+
+.widget-title {
+    color: var(--vatican-red);
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid var(--vatican-yellow);
+    font-size: 1.5rem;
+    font-family: var(--font-serif);
+}
+
+/* Biografia do Papa */
+.pope-bio {
+    text-align: center;
+}
+
+.pope-portrait-container {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    margin: 0 auto 1.5rem;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 5px solid var(--vatican-yellow);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+.pope-portrait {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.pope-name-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0,0,0,0.7);
+    color: white;
+    padding: 0.5rem;
+    font-size: 0.9rem;
+    font-style: italic;
+}
+
+.bio-facts {
+    text-align: left;
+    margin-bottom: 1.5rem;
+}
+
+.bio-fact {
+    display: flex;
+    margin-bottom: 0.8rem;
+    padding-bottom: 0.8rem;
+    border-bottom: 1px solid var(--light-gray);
+}
+
+.fact-label {
+    font-weight: 600;
+    min-width: 100px;
+    color: var(--dark-gray);
+}
+
+.fact-value {
+    color: var(--dark);
+}
+
+/* Notícias */
+.news-scroll-container {
+    max-height: 400px;
+    overflow-y: auto;
+    padding-right: 0.5rem;
+}
+
+.news-item {
+    margin-bottom: 1.5rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid var(--light-gray);
+    position: relative;
+    padding-left: 1.5rem;
+}
+
+.news-item:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.news-bullet {
+    position: absolute;
+    left: 0;
+    top: 0.5rem;
+    width: 8px;
+    height: 8px;
+    background-color: var(--vatican-red);
+    border-radius: 50%;
+}
+
+.news-item h3 {
+    margin-bottom: 0.5rem;
+    font-size: 1.1rem;
+    line-height: 1.4;
+}
+
+.news-item h3 a:hover {
+    color: var(--vatican-red);
+}
+
+.news-item-date {
+    color: var(--dark-gray);
+    font-size: 0.8rem;
+}
+
+/* Agenda */
+.agenda-item {
+    display: flex;
+    margin-bottom: 1.5rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid var(--light-gray);
+    gap: 1rem;
+}
+
+.agenda-item:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.agenda-date {
+    background-color: var(--vatican-red);
+    color: white;
+    border-radius: 4px;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.agenda-day {
+    font-size: 1.5rem;
+    font-weight: bold;
+    line-height: 1;
+}
+
+.agenda-month {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.agenda-content h3 {
+    font-size: 1.1rem;
+    margin-bottom: 0.3rem;
+}
+
+.agenda-content p {
+    color: var(--dark-gray);
+    font-size: 0.9rem;
+}
+
+/* Newsletter */
+.newsletter-widget {
+    background: linear-gradient(135deg, var(--usa-blue), var(--vatican-red));
+    color: white;
+}
+
+.newsletter-widget .widget-title {
+    color: white;
+    border-bottom-color: var(--vatican-yellow);
+}
+
+.newsletter-form input {
+    width: 100%;
+    padding: 0.8rem 1rem;
+    margin-bottom: 1rem;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    background-color: rgba(255,255,255,0.9);
+}
+
+.newsletter-form button {
+    width: 100%;
+    background-color: var(--vatican-yellow);
+    color: var(--dark);
+    border: none;
+    padding: 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    transition: all 0.3s ease;
+}
+
+.newsletter-form button:hover {
+    background-color: white;
+    transform: translateY(-3px);
+}
+
+/* Paginação */
+.pagination {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-top: 3rem;
+}
+
+.page-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background-color: white;
+    color: var(--dark);
+    border-radius: 4px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.page-link:hover, .current-page {
+    background-color: var(--vatican-red);
+    color: white;
+}
+
+/* Rodapé */
+footer {
+    background-color: var(--dark);
+    color: white;
+    padding: 4rem 2rem 2rem;
+    margin-top: 4rem;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 3rem;
+}
+
+.footer-column h3 {
+    color: var(--vatican-yellow);
+    margin-bottom: 1.5rem;
+    font-size: 1.3rem;
+    font-family: var(--font-serif);
+}
+
+.footer-logo {
+    font-family: var(--font-serif);
+    font-size: 2rem;
+    color: var(--vatican-yellow);
+    margin-top: 1rem;
+    font-style: italic;
+}
+
+.footer-links {
+    list-style: none;
+}
+
+.footer-links li {
+    margin-bottom: 0.8rem;
+}
+
+.footer-links a {
+    color: var(--medium-gray);
+    transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: var(--vatican-yellow);
+}
+
+address {
+    font-style: normal;
+    margin-bottom: 1.5rem;
+}
+
+address p {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.social-links {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1.5rem;
+}
+
+.social-links a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background-color: rgba(255,255,255,0.1);
+    border-radius: 50%;
+    color: white;
+    font-size: 1.2rem;
+    transition: all 0.3s ease;
+}
+
+.social-links a:hover {
+    background-color: var(--vatican-yellow);
+    color: var(--dark);
+    transform: translateY(-3px);
+}
+
+.copyright {
+    text-align: center;
+    margin-top: 3rem;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    color: var(--medium-gray);
+    font-size: 0.9rem;
+}
+
+.credits {
+    margin-top: 0.5rem;
+    font-size: 0.8rem;
+}
+
+/* Botão Voltar ao Topo */
+.back-to-top {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    width: 50px;
+    height: 50px;
+    background-color: var(--vatican-red);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    z-index: 99;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+}
+
+.back-to-top.visible {
+    opacity: 1;
+    visibility: visible;
+}
+
+.back-to-top:hover {
+    background-color: var(--usa-blue);
+    transform: translateY(-5px);
+}
+
+/* Responsividade */
+@media (max-width: 1024px) {
+    .container {
+        grid-template-columns: 1fr;
+    }
+    
+    .articles-container {
+        order: 2;
+    }
+    
+    aside {
+        order: 1;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+    }
+    
+    .pope-bio {
+        grid-column: span 2;
+    }
+}
+
+@media (max-width: 768px) {
+    .logo {
+        font-size: 3.5rem;
+    }
+    
+    .slogan {
+        font-size: 1.2rem;
+    }
+    
+    .menu-toggle {
+        display: block;
+    }
+    
+    nav ul {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background-color: var(--usa-blue);
+        flex-direction: column;
+        padding: 1rem;
+        box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+    }
+    
+    nav ul.show {
+        display: flex;
+    }
+    
+    .featured-article .article-title {
+        font-size: 1.8rem;
+    }
+    
+    aside {
+        grid-template-columns: 1fr;
+    }
+    
+    .pope-bio {
+        grid-column: span 1;
+    }
+}
+
+@media (max-width: 480px) {
+    .logo {
+        font-size: 2.5rem;
+    }
+    
+    .header-content {
+        padding: 1rem;
+    }
+    
+    .container {
+        padding: 0 1rem;
+    }
+    
+    .article-content {
+        padding: 1.5rem;
+    }
+    
+    .featured-article .article-title {
+        font-size: 1.6rem;
+    }
+    
+    .regular-article .article-title {
+        font-size: 1.4rem;
+    }
+}
